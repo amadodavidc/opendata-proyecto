@@ -1,0 +1,40 @@
+[
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Año",
+    "newColumnName": "A�o",
+    "description": "Rename column Año to A�o"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Producción anual de enrgía/Gwh",
+    "newColumnName": "Produccion anual de enrgia/GWh",
+    "description": "Rename column Producción anual de enrgía/Gwh to Produccion anual de enrgia/GWh"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Unidades Instaladas",
+    "expression": "grel:replaceChars(value, \"–\", \"-\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Unidades Instaladas using expression grel:replaceChars(value, \"–\", \"-\")"
+  },
+  {
+    "op": "core/text-transform",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Produccion anual de enrgia/GWh",
+    "expression": "grel:replaceChars(value, \".\", \"\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10,
+    "description": "Text transform on cells in column Produccion anual de enrgia/GWh using expression grel:replaceChars(value, \".\", \"\")"
+  }
+]
